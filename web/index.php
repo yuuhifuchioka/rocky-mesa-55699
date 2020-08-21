@@ -13,7 +13,8 @@ $imagick->setImageFormat('png');
 $imageBlob = $imagick->getImageBlob();
 $base64 = base64_encode($imageBlob);
 
-$arr["base64"] = $base64;
+//$arr["base64"] = $base64;
+$arr["base64"] = file_get_contents('php://input');
 print json_encode($arr, JSON_PRETTY_PRINT);
 
 
